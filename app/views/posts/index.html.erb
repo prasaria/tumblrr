@@ -1,1 +1,10 @@
-<h1>This is the index page that i just created</h1>
+<% @post.each do |post| %>
+  <div class="post_wrapper">
+      <h2 class="Title">
+          <%= link_to post.title, post %>
+      </h2>
+      <p class="Date">
+          <%= time_ago_in_words(post.created_at) %>
+      </p>
+  </div>
+<% end %>
